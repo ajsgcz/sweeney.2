@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <signal.h>
 
+
 #define SHM_KEY_CLOCK 1234
 
 struct Clock {
@@ -45,7 +46,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    // Calculate termination time
+    
     int termSeconds = clock->seconds + seconds;
     int termNanoseconds = clock->nanoseconds + nanoseconds;
     if (termNanoseconds >= 1000000000) {
